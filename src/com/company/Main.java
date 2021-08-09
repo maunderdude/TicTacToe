@@ -23,6 +23,7 @@ public class Main {
         // System.out.println(gameBoard);
 
         // Variables
+        /*
         String one = "";
         String two = "";
         String three = "";
@@ -32,6 +33,8 @@ public class Main {
         String seven = "";
         String eight = "";
         String nine = "";
+
+         */
 
         boolean optionOne = false;
         boolean optionTwo = false;
@@ -43,8 +46,22 @@ public class Main {
         boolean optionEight = false;
         boolean optionNine = false;
 
+        /*
+        boolean optionOneAi = false;
+        boolean optionTwoAi = false;
+        boolean optionThreeAi = false;
+        boolean optionFourAi = false;
+        boolean optionFiveAi = false;
+        boolean optionSixAi = false;
+        boolean optionSevenAi = false;
+        boolean optionEightAi = false;
+        boolean optionNineAi = false;
+
+         */
+
         // User input
         Scanner scan = new Scanner(System.in);
+        int userInput;
 
         // AI input
         Random ai = new Random();
@@ -73,131 +90,220 @@ public class Main {
 
             while(winCondition) {
 
+
+                System.out.println("Please enter number between 1 - 9 to complete your go:");
+
                 str = Arrays.toString(gameBoard).replace(",", "");
                 System.out.println(str);
 
+                userInput = scan.nextInt();
 
-                    System.out.println("Please enter number between 1 - 9 to complete your go:");
-                    int userInput = scan.nextInt();
 
-                    // Validation needed
-
-                    // Switch
-                    switch (userInput) {
-                        case 1:
-                            if (optionOne == true) {
-                                System.out.println("This space has already been taken");
-                            }
-                            gameBoard[0] = "\n  x |";
-                            one = "x";
-                            optionOne = true;
-                            break;
-                        case 2:
-                            gameBoard[1] = " x |";
-                            two = "x";
-                            optionTwo = true;
-                            break;
-                        case 3:
-                            gameBoard[2] = " x \n";
-                            three = "x";
-                            optionThree = true;
-                            break;
-                        case 4:
-                            gameBoard[6] = " x |";
-                            four = "x";
-                            optionFour = true;
-                            break;
-                        case 5:
-                            gameBoard[7] = " x |";
-                            five = "x";
-                            optionFive = true;
-                            break;
-                        case 6:
-                            gameBoard[8] = " x \n";
-                            six = "x";
-                            optionSix = true;
-                            break;
-                        case 7:
-                            gameBoard[15] = " x |";
-                            seven = "x";
-                            optionSeven = true;
-                            break;
-                        case 8:
-                            gameBoard[16] = " x |";
-                            eight = "x";
-                            optionEight = true;
-                            break;
-                        case 9:
-                            gameBoard[17] = " x \n";
-                            nine = "x";
-                            optionNine = true;
-                            break;
+                // Validation loop
+                while(true){
+                    // Checks to see if if choice has already been chosen
+                    if(userInput == 1 && optionOne){
+                        System.out.println("Choose again:");
+                    }
+                    else if(userInput == 2 && optionTwo){
+                        System.out.println("Choose again:");
+                    }
+                    else if(userInput == 3 && optionThree){
+                        System.out.println("Choose again:");
+                    }
+                    else if(userInput == 4 && optionFour){
+                        System.out.println("Choose again:");
+                    }
+                    else if(userInput == 5 && optionFive){
+                        System.out.println("Choose again:");
+                    }
+                    else if(userInput == 6 && optionSix){
+                        System.out.println("Choose again:");
+                    }
+                    else if(userInput == 7 && optionSeven){
+                        System.out.println("Choose again:");
+                    }
+                    else if(userInput == 8 && optionEight){
+                        System.out.println("Choose again:");
+                    }
+                    else if(userInput == 9 && optionNine){
+                        System.out.println("Choose again:");
+                    }
+                    else{
+                        break;
                     }
 
-                    if((optionOne && optionTwo  && optionThree) || (optionOne && optionFour && optionSeven) || (optionTwo && optionFive && optionEight)
-                    || (optionThree && optionSix && optionNine) || (optionOne && optionFive && optionNine) || (optionFour && optionFive && optionSix) || (optionSeven && optionEight && optionNine)){
-                        str = Arrays.toString(gameBoard).replace(",", "");
-                        System.out.println(str);
-                        System.out.println("-----------------------------\n");
-                        System.out.println("Congratulations! You win!");
-                        winCondition = false;
-                    }
-
-
-                aiChoice = ai.nextInt(choiceArray.length + 1);
-
-                // Switch
-                switch (aiChoice) {
-                    case 1:
-                        gameBoard[0] = "\n  o |";
-                        one = "o";
-                        optionOne = false;
-                        break;
-                    case 2:
-                        gameBoard[1] = " o |";
-                        two = "o";
-                        optionTwo = false;
-                        break;
-                    case 3:
-                        gameBoard[2] = " o \n";
-                        three = "o";
-                        optionThree = false;
-                        break;
-                    case 4:
-                        gameBoard[6] = " o |";
-                        four = "o";
-                        optionFour = false;
-                        break;
-                    case 5:
-                        gameBoard[7] = " o |";
-                        five = "o";
-                        optionFive = false;
-                        break;
-                    case 6:
-                        gameBoard[8] = " o \n";
-                        six = "o";
-                        optionSix = false;
-                        break;
-                    case 7:
-                        gameBoard[15] = " o |";
-                        seven = "o";
-                        optionSeven = false;
-                        break;
-                    case 8:
-                        gameBoard[16] = " o |";
-                        eight = "o";
-                        optionEight = false;
-                        break;
-                    case 9:
-                        gameBoard[17] = " o \n";
-                        nine = "";
-                        optionNine = false;
-                        break;
+                    userInput = scan.nextInt();
 
                 }
 
+                        // Switch
+                        switch (userInput) {
+                            case 1:
+                                gameBoard[0] = "\n  x |";
+                                //one = "x";
+                                optionOne = true;
+                                break;
+                            case 2:
+                                gameBoard[1] = " x |";
+                                //two = "x";
+                                optionTwo = true;
+                                break;
+                            case 3:
+                                gameBoard[2] = " x \n";
+                                //three = "x";
+                                optionThree = true;
+                                break;
+                            case 4:
+                                gameBoard[6] = " x |";
+                                //four = "x";
+                                optionFour = true;
+                                break;
+                            case 5:
+                                gameBoard[7] = " x |";
+                                //five = "x";
+                                optionFive = true;
+                                break;
+                            case 6:
+                                gameBoard[8] = " x \n";
+                                //six = "x";
+                                optionSix = true;
+                                break;
+                            case 7:
+                                gameBoard[15] = " x |";
+                                //seven = "x";
+                                optionSeven = true;
+                                break;
+                            case 8:
+                                gameBoard[16] = " x |";
+                                //eight = "x";
+                                optionEight = true;
+                                break;
+                            case 9:
+                                gameBoard[17] = " x \n";
+                                //nine = "x";
+                                optionNine = true;
+                                break;
+                        }
 
+
+                     /*   if ((optionOne && optionTwo && optionThree) || (optionOne && optionFour && optionSeven) || (optionTwo && optionFive && optionEight)
+                                || (optionThree && optionSix && optionNine) || (optionOne && optionFive && optionNine) || (optionFour && optionFive && optionSix) || (optionSeven && optionEight && optionNine)) {
+                            str = Arrays.toString(gameBoard).replace(",", "");
+                            System.out.println(str);
+                            System.out.println("-----------------------------\n");
+                            System.out.println("Congratulations! You win!");
+                            winCondition = false;
+                        }
+
+
+                      */
+
+                aiChoice = ai.nextInt(choiceArray.length );
+
+                // Validation loop
+                while(true){
+                    // Checks to see if if choice has already been chosen
+                    if(aiChoice == 0 && optionOne){
+
+                    }
+                    else if(aiChoice == 1 && optionTwo){
+
+                    }
+                    else if(aiChoice == 2 && optionThree){
+
+                    }
+                    else if(aiChoice == 3 && optionFour){
+
+                    }
+                    else if(aiChoice == 4 && optionFive){
+
+                    }
+                    else if(aiChoice == 5 && optionSix){
+
+                    }
+                    else if(aiChoice == 6 && optionSeven){
+
+                    }
+                    else if(aiChoice == 7 && optionEight){
+
+                    }
+                    else if(aiChoice == 8 && optionNine){
+
+                    }
+                    else{
+                        break;
+                    }
+
+                    aiChoice = ai.nextInt(choiceArray.length + 1);
+
+                }
+
+                        // Switch
+                        switch (aiChoice) {
+                            case 0:
+                                gameBoard[0] = "\n  o |";
+                                //one = "o";
+                                optionOne = true;
+                                break;
+                            case 1:
+                                gameBoard[1] = " o |";
+                                //two = "o";
+                                optionTwo = true;
+                                break;
+                            case 2:
+                                gameBoard[2] = " o \n";
+                                //three = "o";
+                                optionThree = true;
+                                break;
+                            case 3:
+                                gameBoard[6] = " o |";
+                                //four = "o";
+                                optionFour = true;
+                                break;
+                            case 4:
+                                gameBoard[7] = " o |";
+                                //five = "o";
+                                optionFive = true;
+                                break;
+                            case 5:
+                                gameBoard[8] = " o \n";
+                                //six = "o";
+                                optionSix = true;
+                                break;
+                            case 6:
+                                gameBoard[15] = " o |";
+                                //seven = "o";
+                                optionSeven = true;
+                                break;
+                            case 7:
+                                gameBoard[16] = " o |";
+                                //eight = "o";
+                                optionEight = true;
+                                break;
+                            case 8:
+                                gameBoard[17] = " o \n";
+                                //nine = "";
+                                optionNine = true;
+                                break;
+
+                        }
+
+                    }
+
+            /*
+            if((optionOneAi && optionTwoAi  && optionThreeAi) || (optionOneAi && optionFourAi && optionSevenAi) || (optionTwoAi && optionFiveAi && optionEightAi)
+                    || (optionThreeAi && optionSixAi && optionNineAi) || (optionOneAi && optionFiveAi && optionNineAi) || (optionFourAi && optionFiveAi && optionSixAi) ||
+                    (optionSevenAi && optionEightAi && optionNineAi)){
+                str = Arrays.toString(gameBoard).replace(",", "");
+                System.out.println(str);
+                System.out.println("-----------------------------\n");
+                System.out.println("You Lose!");
+                winCondition = false;
             }
+
+             */
+
 
             System.exit(0);
         }
@@ -208,119 +314,206 @@ public class Main {
             scan.nextLine();
 
 
-
-                // Validation needed
-
             while(winCondition) {
 
 
                 aiChoice = ai.nextInt(choiceArray.length + 1);
 
+                // Validation loop
+                while(true){
+                    // Checks to see if if choice has already been chosen
+                    if(aiChoice == 0 && optionOne){
+                    }
+                    else if(aiChoice == 1 && optionTwo){
+
+                    }
+                    else if(aiChoice == 2 && optionThree){
+
+                    }
+                    else if(aiChoice == 3 && optionFour){
+
+                    }
+                    else if(aiChoice == 4 && optionFive){
+
+                    }
+                    else if(aiChoice == 5 && optionSix){
+
+                    }
+                    else if(aiChoice == 6 && optionSeven){
+
+                    }
+                    else if(aiChoice == 7 && optionEight){
+
+                    }
+                    else if(aiChoice == 8 && optionNine){
+
+                    }
+                    else{
+                        break;
+                    }
+
+                    aiChoice = ai.nextInt(choiceArray.length );
+
+                }
+
                 // Switch
                 switch (aiChoice) {
-                    case 1:
+                    case 0:
                         gameBoard[0] = "\n  o |";
-                        one = "o";
-                        optionOne = false;
+                        //one = "o";
+                        optionOne = true;
+                        break;
+                    case 1:
+                        gameBoard[1] = " o |";
+                        //two = "o";
+                        optionTwo = true;
                         break;
                     case 2:
-                        gameBoard[1] = " o |";
-                        two = "o";
-                        optionTwo = false;
+                        gameBoard[2] = " o \n";
+                        //three = "o";
+                        optionThree = true;
                         break;
                     case 3:
-                        gameBoard[2] = " o \n";
-                        three = "o";
-                        optionThree = false;
+                        gameBoard[6] = " o |";
+                        //four = "o";
+                        optionFour = true;
                         break;
                     case 4:
-                        gameBoard[6] = " o |";
-                        four = "o";
-                        optionFour = false;
+                        gameBoard[7] = " o |";
+                        //five = "o";
+                        optionFive = true;
                         break;
                     case 5:
-                        gameBoard[7] = " o |";
-                        five = "o";
-                        optionFive = false;
+                        gameBoard[8] = " o \n";
+                        //six = "o";
+                        optionSix = true;
                         break;
                     case 6:
-                        gameBoard[8] = " o \n";
-                        six = "o";
-                        optionSix = false;
+                        gameBoard[15] = " o |";
+                        //seven = "o";
+                        optionSeven = true;
                         break;
                     case 7:
-                        gameBoard[15] = " o |";
-                        seven = "o";
-                        optionSeven = false;
+                        gameBoard[16] = " o |";
+                        //eight = "o";
+                        optionEight = true;
                         break;
                     case 8:
-                        gameBoard[16] = " o |";
-                        eight = "o";
-                        optionEight = false;
-                        break;
-                    case 9:
                         gameBoard[17] = " o \n";
-                        nine = "";
-                        optionNine = false;
+                        //nine = "";
+                        optionNine = true;
                         break;
 
                 }
 
+                /*
+                if((optionOneAi && optionTwoAi  && optionThreeAi) || (optionOneAi && optionFourAi && optionSevenAi) || (optionTwoAi && optionFiveAi && optionEightAi)
+                        || (optionThreeAi && optionSixAi && optionNineAi) || (optionOneAi && optionFiveAi && optionNineAi) || (optionFourAi && optionFiveAi && optionSixAi) ||
+                        (optionSevenAi && optionEightAi && optionNineAi)){
+                    str = Arrays.toString(gameBoard).replace(",", "");
+                    System.out.println(str);
+                    System.out.println("-----------------------------\n");
+                    System.out.println("You Lose!");
+                    winCondition = false;
+                }
+
+                 */
 
                 str = Arrays.toString(gameBoard).replace(",", "");
                 System.out.println(str);
 
                 System.out.println("Please enter number between 1 - 9 to complete your go:");
-                int userInput = scan.nextInt();
+
+
+                userInput = scan.nextInt();
+
+                // Validation loop
+                while(true){
+                    // Checks to see if if choice has already been chosen
+                    if(userInput == 1 && optionOne){
+                        System.out.println("Choose again:");
+                    }
+                    else if(userInput == 2 && optionTwo){
+                        System.out.println("Choose again:");
+                    }
+                    else if(userInput == 3 && optionThree){
+                        System.out.println("Choose again:");
+                    }
+                    else if(userInput == 4 && optionFour){
+                        System.out.println("Choose again:");
+                    }
+                    else if(userInput == 5 && optionFive){
+                        System.out.println("Choose again:");
+                    }
+                    else if(userInput == 6 && optionSix){
+                        System.out.println("Choose again:");
+                    }
+                    else if(userInput == 7 && optionSeven){
+                        System.out.println("Choose again:");
+                    }
+                    else if(userInput == 8 && optionEight){
+                        System.out.println("Choose again:");
+                    }
+                    else if(userInput == 9 && optionNine){
+                        System.out.println("Choose again:");
+                    }
+                    else{
+                        break;
+                    }
+
+                    userInput = scan.nextInt();
+
+                }
 
                 switch (userInput) {
                     case 1:
                         gameBoard[0] = "\n  x |";
-                        one = "x";
+                        //one = "x";
                         optionOne = true;
                         break;
                     case 2:
                         gameBoard[1] = " x |";
-                        two = "x";
+                        //two = "x";
                         optionTwo = true;
                         break;
                     case 3:
                         gameBoard[2] = " x \n";
-                        three = "x";
+                        //three = "x";
                         optionThree = true;
                         break;
                     case 4:
                         gameBoard[6] = " x |";
-                        four = "x";
+                        //four = "x";
                         optionFour = true;
                         break;
                     case 5:
                         gameBoard[7] = " x |";
-                        five = "x";
+                        //five = "x";
                         optionFive = true;
                         break;
                     case 6:
                         gameBoard[8] = " x \n";
-                        six = "x";
+                        //six = "x";
                         optionSix = true;
                         break;
                     case 7:
                         gameBoard[15] = " x |";
-                        seven = "x";
+                        //seven = "x";
                         optionSeven = true;
                         break;
                     case 8:
                         gameBoard[16] = " x |";
-                        eight = "x";
+                        //eight = "x";
                         optionEight = true;
                         break;
                     case 9:
                         gameBoard[17] = " x \n";
-                        nine = "x";
+                        //nine = "x";
                         optionNine = true;
                         break;
                 }
 
+                /*
                 if((optionOne && optionTwo  && optionThree) || (optionOne && optionFour && optionSeven) || (optionTwo && optionFive && optionEight)
                         || (optionThree && optionSix && optionNine) || (optionOne && optionFive && optionNine) || (optionFour && optionFive && optionSix) || (optionSeven && optionEight && optionNine)){
                     str = Arrays.toString(gameBoard).replace(",", "");
@@ -329,6 +522,8 @@ public class Main {
                     System.out.println("Congratulations! You win!");
                     winCondition = false;
                 }
+
+                 */
 
             }
 
