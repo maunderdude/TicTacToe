@@ -300,7 +300,7 @@ public class Main {
                 while (winCondition) {
 
 
-                    aiChoice = ai.nextInt(choiceArray.length + 1);
+                    aiChoice = ai.nextInt(choiceArray.length);
 
                     // Validation loop
                     while (true) {
